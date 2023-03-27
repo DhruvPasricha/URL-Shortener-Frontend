@@ -8,7 +8,7 @@ export const Redirect = () => {
         try {
             setIsLoading(true);
             const shortURL = window.location.pathname;
-            const res = await axios.get(`http://localhost:5000${shortURL}`);
+            const res = await axios.get(`http://url-shortener-production-065f.up.railway.app${shortURL}`);
             setLongURL(res.data.longURL);
         } catch {
             setIsLoading(false);
