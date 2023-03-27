@@ -9,7 +9,7 @@ export default function Home() {
     const getShortURL = async (event: { preventDefault: () => void }) => {
         event.preventDefault();
         try {
-            const res = await axios.post("http://url-shortener-production-065f.up.railway.app/api/shorten", {
+            const res = await axios.post("https://url-shortener-production-065f.up.railway.app/api/shorten", {
                 longURL,
             });
             setShortURL(res.data.shortURL);
