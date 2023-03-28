@@ -9,12 +9,15 @@ export default function Home() {
     const getShortURL = async (event: { preventDefault: () => void }) => {
         event.preventDefault();
         try {
-            const res = await axios.post("https://url-shortener-production-065f.up.railway.app:5000/api/shorten", {
-                longURL,
-            });
+            const res = await axios.post(
+                "https://dhruv-url-shortener.up.railway.app/api/shorten",
+                {
+                    longURL,
+                }
+            );
             setShortURL(res.data.shortURL);
         } catch (error) {
-            setShortURL('');
+            setShortURL("");
             alert("Invalid URL");
             console.log(error);
         }
@@ -43,10 +46,7 @@ export default function Home() {
             {shortURL && (
                 <div className="shortUrlContainer">
                     Short URL :{" "}
-                    <a
-                        href={`/${shortURL}`}
-                        target="_blank"
-                    >
+                    <a href={`/${shortURL}`} target="_blank">
                         {shortURL}
                     </a>
                 </div>
