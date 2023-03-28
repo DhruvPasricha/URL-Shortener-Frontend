@@ -8,7 +8,7 @@ export const Redirect = () => {
         try {
             setIsLoading(true);
             const shortURL = window.location.pathname;
-            const res = await axios.get(`https://dhruv-url-shortener.up.railway.app/getURL/${shortURL}`);
+            const res = await axios.get(`https://dhruv-url-shortener.up.railway.app/getURL${shortURL}`);
             setLongURL(res.data.longURL);
         } catch {
             setIsLoading(false);
